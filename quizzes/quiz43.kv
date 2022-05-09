@@ -1,0 +1,77 @@
+##kv file.quix43##
+
+ScreenManager:
+    id: scr_manager
+
+    LoginScreen:
+        name: "LoginScreen"
+    MainScreen:
+        name:"MainScreen"
+    Newcreen:
+        name:"NewScreen"
+
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        size: 200,500
+    MDCard:
+        size: 200, 500
+        pos_hint:{"center_x":.5,"center_y":.5}
+        #hint is in relatio
+
+        MDRaisedButton:
+            size_hint: .2, 1
+            text: "log in"
+            font_size: "40px"
+            md_bg_color: 1, 1, 0, 0
+            on_release:
+                root.current = "MainScreen"
+<MainScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        size: 200,500
+    MDCard:
+        size: 200, 500
+        pos_hint:{"center_x":.5,"center_y":.5}
+
+        MDRaisedButton:
+            size_hint: .2, 1
+            text: "New"
+            font_size: "40px"
+            #RGB code
+            md_bg_color: 1, 1, 0, 0
+            on_release:
+                root.current = "NewScreen"
+
+        MDRaisedButton:
+            size_hint: .2, 1
+            text: "List"
+            font_size: "40px"
+            #RGB code
+            md_bg_color: 1, 1, 0, 0
+
+        MDRaisedButton:
+            size_hint: .2, 1
+            text: "log out"
+            font_size: "40px"
+            #RGB code
+            md_bg_color: 1, 1, 0, 0
+            on_release:
+                root.current = "LoginScreen"
+
+<NewitemScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        size: 200,500
+    MDCard:
+        size: 200, 500
+        pos_hint:{"center_x":.5,"center_y":.5}
+
+        MDRaisedButton:
+            size_hint: .2, 1
+            text: "back"
+            font_size: "40px"
+            #RGB code
+            md_bg_color: 1, 1, 0, 0
+            on_release:
+                root.parent.current = "MainScreen"
